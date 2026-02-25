@@ -1,6 +1,6 @@
 {
   "name": "@torqlab/get-strava-activity-signals",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extracts Strava activity signals from a given Strava activity.",
   "license": "MIT",
   "type": "module",
@@ -18,7 +18,7 @@
     "dist"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "homepage": "https://github.com/torqlab/get-strava-activity-signals#readme",
   "engines": {

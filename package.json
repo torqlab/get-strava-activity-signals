@@ -1,5 +1,5 @@
 {
-  "name": "@torq/get-strava-activity-signals",
+  "name": "@torqlab/get-strava-activity-signals",
   "version": "1.0.0",
   "description": "Extracts Strava activity signals from a given Strava activity.",
   "license": "MIT",

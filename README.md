@@ -8,7 +8,7 @@ It’s designed for **downstream prompt generation** (e.g. activity artwork / su
 
 ## Install
 
-Published to GitHub Packages.
+Published to NPM.
 
 ```bash
 npm i @torqlab/get-strava-activity-signals
@@ -18,12 +18,6 @@ Or with Bun:
 
 ```bash
 bun add @torqlab/get-strava-activity-signals
-```
-
-If you haven’t used GitHub Packages before, you may need an `.npmrc` with the registry mapping:
-
-```ini
-@torqlab:registry=https://npm.pkg.github.com
 ```
 
 ## Quick start

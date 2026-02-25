@@ -1,4 +1,3 @@
-
 # @torqlab/get-strava-activity-signals
 
 Extract prompt-ready **semantic signals** from a Strava activity.
@@ -34,24 +33,24 @@ import getStravaActivitySignals from '@torq/get-strava-activity-signals';
 import type { StravaActivitySignals } from '@torq/get-strava-activity-signals';
 
 const stravaActivity = {
-	id: 123,
-	type: 'Run',
-	sport_type: 'Run',
-	name: 'Morning Run',
-	description: 'Easy miles in the park',
-	distance: 5000,
-	moving_time: 1500,
-	total_elevation_gain: 60,
-	start_date_local: '2024-01-01T07:10:00Z',
-	gear: { name: 'Nike Pegasus' },
-	commute: false,
+  id: 123,
+  type: 'Run',
+  sport_type: 'Run',
+  name: 'Morning Run',
+  description: 'Easy miles in the park',
+  distance: 5000,
+  moving_time: 1500,
+  total_elevation_gain: 60,
+  start_date_local: '2024-01-01T07:10:00Z',
+  gear: { name: 'Nike Pegasus' },
+  commute: false,
 };
 
 const signals: StravaActivitySignals = getStravaActivitySignals(
-	stravaActivity,
-	// Your moderation/guardrails callback for any user-provided text.
-	// If you don’t need it, pass `() => false`.
-	(input) => input.toLowerCase().includes('forbidden'),
+  stravaActivity,
+  // Your moderation/guardrails callback for any user-provided text.
+  // If you don’t need it, pass `() => false`.
+  (input) => input.toLowerCase().includes('forbidden'),
 );
 
 console.log(signals.core.intensity);
@@ -66,7 +65,7 @@ console.log(signals.derived.atmosphere);
 
 - `activity`: a Strava activity object (shape aligned with Strava’s `GET /activities/{id}` response).
 - `checkForbiddenContent`: `(input: string) => boolean` used to detect forbidden/unsafe content in any user-provided strings.
-	- Used when extracting `semanticContext` from `name`/`description` and when extracting `brands` from `gear`.
+  - Used when extracting `semanticContext` from `name`/`description` and when extracting `brands` from `gear`.
 
 **Returns**
 
@@ -86,40 +85,28 @@ The result is split into:
 
 ```ts
 export interface StravaActivitySignals {
-	core: {
-		activityType: string;
-		intensity: 'low' | 'medium' | 'high';
-		elevation: 'flat' | 'rolling' | 'mountainous';
-		timeOfDay: 'morning' | 'day' | 'evening' | 'night';
-		tags?: string[];
-		brands?: string[];
-		semanticContext?: string[];
-	};
-	derived: {
-		mood:
-			| 'calm'
-			| 'intense'
-			| 'routine'
-			| 'playful'
-			| 'focused';
-		style: 'cartoon' | 'minimal' | 'abstract' | 'illustrated';
-		subject:
-			| 'runner'
-			| 'cyclist'
-			| 'trail runner'
-			| 'walker'
-			| 'hiker'
-			| 'swimmer'
-			| 'athlete';
-		terrain: 'mountainous terrain' | 'rolling hills' | 'flat terrain';
-		environment: 'indoor training space' | 'outdoor training space';
-		atmosphere:
-			| 'soft morning light'
-			| 'bright daylight'
-			| 'warm evening glow'
-			| 'dark night atmosphere'
-			| 'soft neutral light';
-	};
+  core: {
+    activityType: string;
+    intensity: 'low' | 'medium' | 'high';
+    elevation: 'flat' | 'rolling' | 'mountainous';
+    timeOfDay: 'morning' | 'day' | 'evening' | 'night';
+    tags?: string[];
+    brands?: string[];
+    semanticContext?: string[];
+  };
+  derived: {
+    mood: 'calm' | 'intense' | 'routine' | 'playful' | 'focused';
+    style: 'cartoon' | 'minimal' | 'abstract' | 'illustrated';
+    subject: 'runner' | 'cyclist' | 'trail runner' | 'walker' | 'hiker' | 'swimmer' | 'athlete';
+    terrain: 'mountainous terrain' | 'rolling hills' | 'flat terrain';
+    environment: 'indoor training space' | 'outdoor training space';
+    atmosphere:
+      | 'soft morning light'
+      | 'bright daylight'
+      | 'warm evening glow'
+      | 'dark night atmosphere'
+      | 'soft neutral light';
+  };
 }
 ```
 
@@ -158,4 +145,3 @@ bun run build
 ## License
 
 MIT
-

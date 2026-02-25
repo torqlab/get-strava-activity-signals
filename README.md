@@ -11,13 +11,13 @@ It’s designed for **downstream prompt generation** (e.g. activity artwork / su
 Published to GitHub Packages.
 
 ```bash
-npm i @torq/get-strava-activity-signals
+npm i @torqlab/get-strava-activity-signals
 ```
 
 Or with Bun:
 
 ```bash
-bun add @torq/get-strava-activity-signals
+bun add @torqlab/get-strava-activity-signals
 ```
 
 If you haven’t used GitHub Packages before, you may need an `.npmrc` with the registry mapping:
@@ -29,8 +29,8 @@ If you haven’t used GitHub Packages before, you may need an `.npmrc` with the 
 ## Quick start
 
 ```ts
-import getStravaActivitySignals from '@torq/get-strava-activity-signals';
-import type { StravaActivitySignals } from '@torq/get-strava-activity-signals';
+import getStravaActivitySignals from '@torqlab/get-strava-activity-signals';
+import type { StravaActivitySignals } from '@torqlab/get-strava-activity-signals';
 
 const stravaActivity = {
   id: 123,

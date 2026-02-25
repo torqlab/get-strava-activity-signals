@@ -8,9 +8,5 @@
     "emitDeclarationOnly": true,
     "types": []
   },
-  "exclude": [
-    "**/*.test.ts",
-    "node_modules", 
-    "dist"
-  ]
+  "exclude": ["**/*.test.ts", "node_modules", "dist"]
 }

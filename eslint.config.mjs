@@ -25,15 +25,18 @@ export default defineConfig([
         'error',
         {
           selector: 'VariableDeclaration[kind="let"]',
-          message: 'The "let" keyword is FORBIDDEN. Always use "const" for all variable declarations. Code MUST be pure and immutable.',
+          message:
+            'The "let" keyword is FORBIDDEN. Always use "const" for all variable declarations. Code MUST be pure and immutable.',
         },
         {
           selector: 'VariableDeclarator > ArrowFunctionExpression > FunctionExpression',
-          message: 'Nested functions are FORBIDDEN. All functions MUST be defined at the top level of the file.',
+          message:
+            'Nested functions are FORBIDDEN. All functions MUST be defined at the top level of the file.',
         },
         {
           selector: 'VariableDeclarator > ArrowFunctionExpression > ArrowFunctionExpression',
-          message: 'Nested arrow functions are FORBIDDEN. All functions MUST be defined at the top level of the file.',
+          message:
+            'Nested arrow functions are FORBIDDEN. All functions MUST be defined at the top level of the file.',
         },
       ],
       'prefer-const': 'error',
@@ -49,17 +52,15 @@ export default defineConfig([
         },
       ],
       'prefer-arrow-callback': 'error',
-      'arrow-body-style': [
-        'error',
-        'as-needed',
-      ],
+      'arrow-body-style': ['error', 'as-needed'],
       'no-restricted-imports': [
         'error',
         {
           patterns: [
             {
               group: ['fs', 'fs/promises', 'path'],
-              message: "Use 'node:' prefix for Node.js built-ins: import { readFile } from 'node:fs/promises'",
+              message:
+                "Use 'node:' prefix for Node.js built-ins: import { readFile } from 'node:fs/promises'",
             },
           ],
         },
@@ -108,13 +109,7 @@ export default defineConfig([
     },
   },
   {
-    ignores: [
-      'node_modules/**',
-      '**/dist/**',
-      '*.config.js',
-      '**/*.config.mjs',
-      '.claude/**',
-    ],
+    ignores: ['node_modules/**', '**/dist/**', '*.config.js', '**/*.config.mjs', '.claude/**'],
   },
   prettierConfig,
 ]);

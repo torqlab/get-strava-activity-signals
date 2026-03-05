@@ -1,3 +1,5 @@
+[![Publish](https://github.com/torqlab/get-strava-activity-signals/actions/workflows/publish.yml/badge.svg)](https://github.com/torqlab/get-strava-activity-signals/actions/workflows/publish.yml)
+
 # @torqlab/get-strava-activity-signals
 
 Extract prompt-ready **semantic signals** from a Strava activity.
